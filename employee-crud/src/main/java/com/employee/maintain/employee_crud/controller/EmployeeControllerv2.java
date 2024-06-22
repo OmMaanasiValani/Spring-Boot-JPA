@@ -1,17 +1,17 @@
 package com.employee.maintain.employee_crud.controller;
 
 import com.employee.maintain.employee_crud.models.Employee;
+import com.employee.maintain.employee_crud.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
-import com.employee.maintain.employee_crud.service.EmployeeService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/employee")
-public class EmployeeController {
-    @Qualifier("employeeServiceImpl")
+@RequestMapping("/v2/employee")
+public class EmployeeControllerv2 {
+    @Qualifier("employeeServiceImplv2")
     @Autowired
     EmployeeService employeeService;
 
@@ -36,4 +36,3 @@ public class EmployeeController {
         return employeeService.delete(id);
     }
 }
-
